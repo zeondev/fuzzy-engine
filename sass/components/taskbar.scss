@@ -1,0 +1,97 @@
+$tb-border-radius: 7px;
+.taskbar {
+    z-index: 10000;
+    margin: 3px;
+    border-radius: $tb-border-radius;
+    width: calc(100% - 6px);
+    height: 40px;
+    background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, blue, regular), 0.75);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    image-rendering: pixelated;
+    position: absolute;
+    bottom: 0px;
+    .taskbar-item {
+        transition: 0.1s ease;
+        white-space: normal;
+        word-break: break-word;
+        display: flex;
+        align-items: center;
+        float: left;
+        padding: 10px 15px;
+        height: 20px !important;
+        max-height: 20px !important;
+        vertical-align: middle;
+        color: #fff;
+        user-select: none;
+        input {
+            background: white;
+            color: black;
+            font-family: "Segoe UI";
+            outline: none;
+            border: none;
+            height: 20px;
+            vertical-align: bottom;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            padding: 5px;
+            appearance: none;
+        }
+        button {
+            outline: 1px solid transparent;
+            border: 1px solid transparent;
+            height: 30px;
+            padding: 5px;
+            vertical-align: bottom;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background-color: #ffffff;
+            transition: 0.1s ease;
+            color: #aaa;
+        }
+        button:hover {
+            background-color: #f3f3f3;
+            color: #888;
+        }
+        button icon-sff,
+        button icon-sfr {
+            display: block;
+        }
+        .input-group {
+            font-size: 0px;
+            margin-left: 6.5px;
+            margin-right: 6.5px;
+            margin-top: 0px;
+        }
+        input:hover {
+            background: white;
+        }
+    }
+    .taskbar-item.search {
+        height: 40px !important;
+        max-height: 40px !important;
+        padding: 0px;
+    }
+    .taskbar-item:not(.search):hover {
+        background-color: rgba(map.get($colors, accent, blue, hover), 0.5);
+    }
+    .taskbar-item:not(.search):active {
+        background-color: rgba(map.get($colors, accent, blue, pressed), 0.85);
+    }
+    .taskbar-item:first-of-type {
+        border-top-left-radius: $tb-border-radius;
+        border-bottom-left-radius: $tb-border-radius;
+    }
+    .taskbar-item:first-of-type:hover img {
+        filter: invert(45%) sepia(83%) saturate(3421%) hue-rotate(183deg) brightness(98%) contrast(104%);
+        /* used https://codepen.io/sosuke/pen/Pjoqqp */
+    }
+    .taskbar-item:last-of-type {
+        border-top-right-radius: $tb-border-radius;
+        border-bottom-right-radius: $tb-border-radius;
+    }
+    .start {
+        width: 48px !important;
+        height: 20px !important;
+    }
+}

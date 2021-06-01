@@ -1,0 +1,21 @@
+{
+    "name": "windows",
+    "version": "1.0.0",
+    "description": "windows project beta",
+    "main": "index.js",
+    "dependencies": {
+        "sass": "^1.34.0",
+        "scss": "^0.2.4"
+    },
+    "devDependencies": {},
+    "watches": {
+        "sass": "sass/**"
+    },
+    "scripts": {
+        "sass": "npx sass --style=compressed sass/style.scss build/css/style.css",
+        "dev": "rerun-script"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

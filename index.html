@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows</title>
+    <link rel="shortcut icon" href="/assets/windows.ico" type="image/x-icon">
+    <link rel="stylesheet" href="build/css/style.css">
+    <script src="/assets/plain-draggable.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="desktop">
+        <div class="window-container">
+            <!-- Window Container to contain windows obviously -->
+            <div class="window">
+                <div class="titlebar">
+                    <span class="title">
+                        <span>
+                            <icon-sff>
+                                &#xFCBE;
+                            </icon-sff>
+                            <span>Epic Window</span>
+                        </span>
+                    </span>
+                    <span class="buttons">
+                        <icon-sfr class="close">
+                            &#xF367;
+                        </icon-sfr>
+                        <icon-sfr class="maximize">
+                            &#xFC6C;
+                        </icon-sfr>
+                        <icon-sfr class="minimize">
+                            &#xFC70;
+                        </icon-sfr>
+                    </span>
+                </div>
+                <div class="content">
+
+                </div>
+            </div>
+        </div>
+        <div class="start-menu">
+            <!-- Start Menu -->
+            <div class="smCol1">
+                <p><icon-sff>&#xF4EB;</icon-sff></p>
+            </div>
+            <div class="smCol2">
+                <p>Hello</p>
+            </div>
+            <div class="smCol3">
+                <div class="startmenuCard"><span class="startmenuContent">&#x1F319;</span></div>
+                <div class="startmenuCard"><span class="startmenuContent">&#x1F319;</span></div>
+            </div>
+        </div>
+        <div class="taskbar">
+            <!-- Taskbar-->
+            <span class="taskbar-item" onclick="taskbarOpenStartMenu()"><img height="16"
+                    src="/assets/windows.svg"></span>
+            <span class="taskbar-item search">
+                <span class="input-group">
+                    <input required type="text" placeholder="Search...">
+                    <button>
+                        <icon-sfr>&#xFB1A;</icon-sfr>
+                    </button>
+                </span>
+            </span>
+            <span class="taskbar-item">
+                <icon>&#xE00A;</icon>
+            </span>
+            <span class="taskbar-item">
+                <icon-sff>&#xF254;</icon-sff>
+            </span>
+            <span class="taskbar-item" style="float: right;" id="taskbarTime">Loading...</span>
+        </div>
+    </div>
+</body>
+
+</html>

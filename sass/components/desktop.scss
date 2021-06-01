@@ -1,0 +1,14 @@
+.desktop {
+    background-image: url('/assets/desktop.jpg');
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+}
+html,
+body,
+.desktop {
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin:0;
+}

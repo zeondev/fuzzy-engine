@@ -1,0 +1,28 @@
+$colors: (
+    accent: (
+        blue: (
+            regular: #003e92,
+            light: #0067c0,
+            hover: #19519d,
+            active: #0067c0,
+            pressed: #0c4797,
+            active-border: #a6e1ff,
+        ),
+    ),
+    theme: (
+        close: #e81123,
+        close-alt: #f1707a,
+        light: (
+            background: #fff,
+            background-alt: darken(#fff, 10),
+            foreground: #000,
+        ),
+        dark: (
+            background: #000,
+            background-alt: lighten(#000, 5),
+            foreground: #fff,
+        ),
+    ),
+);
+$padding: 6px;
+$main-font: "Segoe UI";

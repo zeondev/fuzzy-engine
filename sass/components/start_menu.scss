@@ -1,0 +1,63 @@
+.start-menu {
+    display: none;
+}
+
+.start-menu.open {
+    margin: 3px;
+    padding-bottom: 3px;
+    width: 650px;
+    height: 596px;
+    background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, blue, regular), 0.75);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    image-rendering: pixelated;
+    position: absolute;
+    bottom: 40px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    display: block;
+}
+
+.start-menu.open + .taskbar {
+    border-top-left-radius: 0px;
+    .taskbar-item:first-of-type {
+        border-top-left-radius: 0px;
+    }
+}
+
+.start-menu {
+    .smCol1 {
+        color: #fff;
+        text-align: center;
+        width: 50px;
+        float: left;
+    }
+    .smCol2 {
+        color: #fff;
+        padding: 15px;
+        float: left;
+        p {
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+    .smCol3 {
+        float: right;
+        // padding: 15px;
+        .startmenuCard {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px;
+            width: 100px;
+            height: 100px;
+            background: /*url("/assets/noise.png")*/ rgb(9, 12, 144);
+            color: #fff;
+            .startmenuContent {
+                margin: 0;
+            }
+        }
+    }
+}

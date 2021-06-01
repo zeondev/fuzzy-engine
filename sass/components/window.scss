@@ -1,0 +1,93 @@
+$window-border-radius: 3px;
+.window-container {
+    .window {
+        border-radius: 3px;
+        position: absolute;
+        width: 350px;
+        height: 200px;
+        background-color: map.get($colors, accent, blue, regu);
+        .titlebar {
+            border-top-left-radius: $window-border-radius;
+            border-top-right-radius: $window-border-radius;
+            user-select: none;
+            background-color: map.get($colors, theme, dark, background);
+            // background-color: map.get($colors, theme, dark, background-alt);
+            height: 30px;
+            color: map.get($colors, theme, dark, foreground);
+            display: flex;
+            .title {
+                flex-grow: 1;
+                width: max-content;
+                display: inline;
+                vertical-align: middle;
+                icon-sff,
+                icon-sfr,
+                icon {
+                    font-size: 16px;
+                    margin-left: 8px;
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                span {
+                    font-size: 8px;
+                    margin-left: 6px;
+                }
+                span > span {
+                    top: 5%;
+                    position: absolute;
+                }
+            }
+            .buttons {
+                float: right;
+                display: block;
+                color: map.get($colors, theme, dark, foreground);
+                icon-sff,
+                icon-sfr,
+                icon {
+                    float: right;
+                    width: 10px;
+                    height: 10px;
+                    font-size: 10px;
+                    padding: 10px 17px;
+                    transition: 0.1s ease;
+                }
+                icon-sff:first-of-type,
+                icon-sfr:first-of-type,
+                icon:first-of-type {
+                    border-top-right-radius: $window-border-radius;
+                }
+                icon-sff:hover,
+                icon-sfr:hover,
+                icon:hover {
+                    background: lighten(map.get($colors, theme, dark, background), 3);
+                }
+                icon-sff:active,
+                icon-sfr:active,
+                icon:active {
+                    background: lighten(map.get($colors, theme, dark, background), 5);
+                }
+                icon-sff:first-of-type:hover,
+                icon-sfr:first-of-type:hover,
+                icon:first-of-type:hover {
+                    background: map.get($colors, theme, close);
+                    color: map.get($colors, theme, dark, foreground);
+                }
+                icon-sff:first-of-type:active,
+                icon-sfr:first-of-type:active,
+                icon:first-of-type:active {
+                    background: map.get($colors, theme, close-alt);
+                    color: invert(map.get($colors, theme, dark, foreground));
+                }
+            }
+        }
+        .content {
+            background-color: map.get($colors, theme, dark, background);
+            min-height: 50px;
+            height: calc(100% - 30px);
+            border-bottom-left-radius: $window-border-radius;
+            border-bottom-right-radius: $window-border-radius;
+        }
+    }
+}
