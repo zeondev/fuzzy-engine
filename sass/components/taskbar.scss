@@ -1,13 +1,46 @@
 $tb-border-radius: 7px;
+
+body[theme="dark"] {
+    .taskbar {
+        background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, dark, regular), 0.75);
+        .taskbar-item {
+            color: #fff;
+            input {
+                background: rgba(map.get($colors, accent, dark, regular), 0.75);
+                color: rgba(map.get($colors, accent, dark, foreground), 0.75);
+            }
+            button {
+                background: lighten(rgba(map.get($colors, accent, dark, regular), 0.75), 10);
+                color: #fff;
+            }
+            button:hover {
+                background-color: lighten(rgba(map.get($colors, accent, dark, regular), 0.75), 8);
+                color: #ddd;
+            }
+        }
+    }
+    .taskbar-item:first-of-type img {
+        filter: invert(0%) sepia(4%) saturate(0%) hue-rotate(293deg) brightness(95%) contrast(105%);
+        /* used https://codepen.io/sosuke/pen/Pjoqqp */
+    }
+    .taskbar-item:not(.search):hover {
+        background-color: rgba(map.get($colors, accent, dark, hover), 0.5);
+    }
+    .taskbar-item:not(.search):active {
+        background-color: rgba(map.get($colors, accent, dark, pressed), 0.85);
+    }
+}
 .taskbar {
     z-index: 10000;
     margin: 3px;
     border-radius: $tb-border-radius;
     width: calc(100% - 6px);
     height: 40px;
-    background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, blue, regular), 0.75);
-    backdrop-filter: blur(2.5px);
-    -webkit-backdrop-filter: blur(2.5px);
+    background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, light, regular), 0.5);
+    background-image: $acrylic !important;
+    background-blend-mode: luminosity !important;
+    backdrop-filter: $blur;
+    -webkit-backdrop-filter: $blur;
     image-rendering: pixelated;
     position: absolute;
     bottom: 0px;
@@ -22,7 +55,7 @@ $tb-border-radius: 7px;
         height: 20px !important;
         max-height: 20px !important;
         vertical-align: middle;
-        color: #fff;
+        color: map.get($colors, accent, light, foreground);
         user-select: none;
         input {
             background: white;
@@ -34,14 +67,14 @@ $tb-border-radius: 7px;
             vertical-align: bottom;
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
-            padding: 5px;
+            padding: 5px 10px;
             appearance: none;
         }
         button {
             outline: 1px solid transparent;
             border: 1px solid transparent;
             height: 30px;
-            padding: 5px;
+            padding: 5px 8px;
             vertical-align: bottom;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
@@ -73,14 +106,19 @@ $tb-border-radius: 7px;
         padding: 0px;
     }
     .taskbar-item:not(.search):hover {
-        background-color: rgba(map.get($colors, accent, blue, hover), 0.5);
+        background-color: rgba(map.get($colors, accent, light, hover), 0.5);
     }
     .taskbar-item:not(.search):active {
-        background-color: rgba(map.get($colors, accent, blue, pressed), 0.85);
+        background-color: rgba(map.get($colors, accent, light, pressed), 0.85);
     }
     .taskbar-item:first-of-type {
         border-top-left-radius: $tb-border-radius;
         border-bottom-left-radius: $tb-border-radius;
+    }
+    .taskbar-item:first-of-type img {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(0%) hue-rotate(293deg) brightness(95%)
+            contrast(105%);
+        /* used https://codepen.io/sosuke/pen/Pjoqqp */
     }
     .taskbar-item:first-of-type:hover img {
         filter: invert(45%) sepia(83%) saturate(3421%) hue-rotate(183deg) brightness(98%) contrast(104%);
@@ -94,4 +132,7 @@ $tb-border-radius: 7px;
         width: 48px !important;
         height: 20px !important;
     }
+}
+.start-menu-open {
+    background: rgba(map.get($colors, accent, dark, light), 0.75) !important;
 }

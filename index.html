@@ -13,9 +13,12 @@
 </head>
 
 <body>
+    <noscript>
+        <h2>You need to enable JavaScript to run this app correctly!</h2>
+        <p>Please enable it for this to work properly.</p>
+    </noscript>
     <div class="desktop">
         <div class="window-container">
-            <!-- Window Container to contain windows obviously -->
             <div class="window">
                 <div class="titlebar">
                     <span class="title">
@@ -23,7 +26,7 @@
                             <icon-sff>
                                 &#xFCBE;
                             </icon-sff>
-                            <span>Epic Window</span>
+                            <span>Window test</span>
                         </span>
                     </span>
                     <span class="buttons">
@@ -39,21 +42,72 @@
                     </span>
                 </div>
                 <div class="content">
-
+                    Everything you see here is a work in progress!
+                </div>
+            </div>
+            <div class="window">
+                <div class="titlebar">
+                    <span class="title">
+                        <span>
+                            <icon-sfr>
+                                &#xF6A8;
+                            </icon-sfr>
+                            <span>Settings</span>
+                        </span>
+                    </span>
+                    <span class="buttons">
+                        <icon-sfr class="close">
+                            &#xF367;
+                        </icon-sfr>
+                        <icon-sfr class="maximize">
+                            &#xFC6C;
+                        </icon-sfr>
+                        <icon-sfr class="minimize">
+                            &#xFC70;
+                        </icon-sfr>
+                    </span>
+                </div>
+                <div class="content">
+                    <h3 style="text-align: center; margin-top: 0px;">Settings</h3>
+                    <div class="card" onclick="windows.bugcheck.make('Unfinished feature')">
+                        <span class="image">
+                            <icon-sff></icon-sff>
+                        </span>
+                        <span class="label">
+                            Switch Theme
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="start-menu">
             <!-- Start Menu -->
             <div class="smCol1">
-                <p><icon-sff>&#xF4EB;</icon-sff></p>
+                <span>
+                    <icon-sff></icon-sff>
+                </span>
             </div>
             <div class="smCol2">
-                <p>Hello</p>
+                <span style="display: inline-flex;align-content: center;">Recently added</span>
             </div>
+
             <div class="smCol3">
-                <div class="startmenuCard"><span class="startmenuContent">&#x1F319;</span></div>
-                <div class="startmenuCard"><span class="startmenuContent">&#x1F319;</span></div>
+                <div class="card">
+                    <span class="image">
+                        <icon-sff></icon-sff>
+                    </span>
+                    <span class="label">
+                        Settings
+                    </span>
+                </div>
+                <div class="card">
+                    <span class="image">
+                        <icon-sff></icon-sff>
+                    </span>
+                    <span class="label">
+                        Test Window
+                    </span>
+                </div>
             </div>
         </div>
         <div class="taskbar">
@@ -74,7 +128,30 @@
             <span class="taskbar-item">
                 <icon-sff>&#xF254;</icon-sff>
             </span>
-            <span class="taskbar-item" style="float: right;" id="taskbarTime">Loading...</span>
+            <span class="taskbar-item" style="float: right;" id="taskbarTime">
+                <icon-sff style="animation: spin 2s infinite;">&#xF712;</icon-sff>
+            </span>
+        </div>
+    </div>
+    <div class="context-menu" style="visibility: collapse;width: 0px;height:0px;">
+        <ul>
+            <li>gaming</li>
+            <li>gaming</li>
+            <li>gaming</li>
+        </ul>
+    </div>
+    <div class="bluescreen">
+        <h1 class="bsod-title">
+            <icon-sff style="vertical-align: bottom;">&#xF3E9;</icon-sff> Oh no!
+        </h1>
+        <h3>Windows has ran into a problem. We stopped the system to prevent any further damage.<br>We're collecting
+            some error info, and then we will restart for you.</h3>
+        <h4 id="bluescreenReason">Bugcheck not loaded yet</h4>
+        <h5 class="my-0">
+            Rebooting in 5 seconds... <icon-sff style="animation: spin 1s infinite;">&#xF712;</icon-sff>
+        </h5>
+        <div class="qr">
+            <img src="/assets/qr-issues-https.svg" />
         </div>
     </div>
 </body>

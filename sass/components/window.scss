@@ -1,3 +1,46 @@
+body[theme="dark"] {
+    .window-container {
+        .window {
+            background-color: map.get($colors, accent, dark, regular) !important;
+            .titlebar {
+                background-color: map.get($colors, theme, dark, background);
+                color: map.get($colors, theme, dark, foreground);
+                .buttons {
+                    color: map.get($colors, theme, dark, foreground);
+                    icon-sff:hover,
+                    icon-sfr:hover,
+                    icon:hover {
+                        background: lighten(map.get($colors, theme, dark, background), 3);
+                    }
+                    icon-sff:active,
+                    icon-sfr:active,
+                    icon:active {
+                        background: lighten(map.get($colors, theme, dark, background), 5);
+                    }
+                    icon-sff:first-of-type:hover,
+                    icon-sfr:first-of-type:hover,
+                    icon:first-of-type:hover {
+                        background: map.get($colors, theme, close);
+                        color: map.get($colors, theme, dark, foreground);
+                    }
+                    icon-sff:first-of-type:active,
+                    icon-sfr:first-of-type:active,
+                    icon:first-of-type:active {
+                        background: map.get($colors, theme, close-alt);
+                        color: invert(map.get($colors, theme, dark, foreground));
+                    }
+                }
+            }
+            .content {
+                background-color: map.get($colors, theme, dark, background);
+                color: map.get($colors, theme, dark, foreground);
+                font: size 10px;
+                user-select: none !important;
+            }
+        }
+    }
+}
+
 $window-border-radius: 3px;
 .window-container {
     .window {
@@ -5,15 +48,15 @@ $window-border-radius: 3px;
         position: absolute;
         width: 350px;
         height: 200px;
-        background-color: map.get($colors, accent, blue, regu);
+        background-color: map.get($colors, accent, light, regular);
         .titlebar {
             border-top-left-radius: $window-border-radius;
             border-top-right-radius: $window-border-radius;
             user-select: none;
-            background-color: map.get($colors, theme, dark, background);
+            background-color: map.get($colors, theme, light, background);
             // background-color: map.get($colors, theme, dark, background-alt);
             height: 30px;
-            color: map.get($colors, theme, dark, foreground);
+            color: map.get($colors, theme, light, foreground);
             display: flex;
             .title {
                 flex-grow: 1;
@@ -42,7 +85,7 @@ $window-border-radius: 3px;
             .buttons {
                 float: right;
                 display: block;
-                color: map.get($colors, theme, dark, foreground);
+                color: map.get($colors, theme, light, foreground);
                 icon-sff,
                 icon-sfr,
                 icon {
@@ -61,33 +104,34 @@ $window-border-radius: 3px;
                 icon-sff:hover,
                 icon-sfr:hover,
                 icon:hover {
-                    background: lighten(map.get($colors, theme, dark, background), 3);
+                    background: darken(map.get($colors, theme, light, background), 3);
                 }
                 icon-sff:active,
                 icon-sfr:active,
                 icon:active {
-                    background: lighten(map.get($colors, theme, dark, background), 5);
+                    background: darken(map.get($colors, theme, light, background), 5);
                 }
                 icon-sff:first-of-type:hover,
                 icon-sfr:first-of-type:hover,
                 icon:first-of-type:hover {
                     background: map.get($colors, theme, close);
-                    color: map.get($colors, theme, dark, foreground);
+                    color: map.get($colors, theme, light, foreground);
                 }
                 icon-sff:first-of-type:active,
                 icon-sfr:first-of-type:active,
                 icon:first-of-type:active {
                     background: map.get($colors, theme, close-alt);
-                    color: invert(map.get($colors, theme, dark, foreground));
+                    color: invert(map.get($colors, theme, light, foreground));
                 }
             }
         }
         .content {
-            background-color: map.get($colors, theme, dark, background);
+            background-color: map.get($colors, theme, light, background);
             min-height: 50px;
             height: calc(100% - 30px);
             border-bottom-left-radius: $window-border-radius;
             border-bottom-right-radius: $window-border-radius;
+            padding: 10px;
         }
     }
 }

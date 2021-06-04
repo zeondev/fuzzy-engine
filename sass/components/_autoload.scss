@@ -1,8 +1,14 @@
+/* SCSS Autoload to load everything required */
+
 @import "fonts";
 @import "body";
 @import "desktop";
+@import "context_menu";
 @import "start_menu";
 @import "window";
 @import "taskbar";
 @import "icons";
-@import "input";
+@import "animations";
+@import "bluescreen";
+@import "padding";
+@import "card";

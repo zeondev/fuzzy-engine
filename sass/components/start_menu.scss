@@ -1,41 +1,58 @@
-.start-menu {
-    display: none;
+body[theme="dark"] {
+    .start-menu {
+        user-select: none !important;
+        background: rgba(map.get($colors, accent, dark, light), 0.85);
+        .smCol1 {
+            color: map.get($colors, accent, dark, foreground);
+        }
+        .smCol2 {
+            color: map.get($colors, accent, dark, foreground);
+        }
+        .smCol3 {
+            .card {
+                color: map.get($colors, accent, dark, foreground);
+                background: map.get($colors, accent, dark, regular);
+            }
+        }
+    }
 }
 
-.start-menu.open {
+.start-menu {
+    display: none;
     margin: 3px;
     padding-bottom: 3px;
     width: 650px;
     height: 596px;
-    background: /*url("/assets/noise.png")*/ rgba(map.get($colors, accent, blue, regular), 0.75);
-    backdrop-filter: blur(2.5px);
-    -webkit-backdrop-filter: blur(2.5px);
+    background-color: rgba(map.get($colors, accent, light, regular), 0.85);
+    background-image: $acrylic !important;
+    background-blend-mode: luminosity !important;
+    backdrop-filter: $blur;
+    -webkit-backdrop-filter: $blur;
     image-rendering: pixelated;
     position: absolute;
-    bottom: 40px;
+    bottom: -100%;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     display: block;
-}
-
-.start-menu.open + .taskbar {
-    border-top-left-radius: 0px;
-    .taskbar-item:first-of-type {
-        border-top-left-radius: 0px;
-    }
-}
-
-.start-menu {
+    animation: closeStart 0.15s ease-out;
+    opacity: 0;
     .smCol1 {
-        color: #fff;
+        color: map.get($colors, accent, light, foreground);
         text-align: center;
         width: 50px;
         float: left;
+        display: inline-flex;
+        align-content: center;
+        align-self: start;
+        padding: 11px 15px;
+        width: auto;
+        justify-content: unset;
     }
     .smCol2 {
-        color: #fff;
-        padding: 15px;
-        float: left;
+        color: map.get($colors, accent, light, foreground);
+        padding: 9px 15px;
+        display: inline-flex;
+        align-content: center;
         p {
             padding: 0px;
             margin: 0px;
@@ -44,7 +61,7 @@
     .smCol3 {
         float: right;
         // padding: 15px;
-        .startmenuCard {
+        .card {
             cursor: pointer;
             text-align: center;
             display: flex;
@@ -53,11 +70,69 @@
             margin: 15px;
             width: 100px;
             height: 100px;
-            background: /*url("/assets/noise.png")*/ rgb(9, 12, 144);
-            color: #fff;
-            .startmenuContent {
+            border-radius: 5px;
+            color: map.get($colors, accent, light, foreground);
+            background: map.get($colors, accent, light, regular);
+            position: relative;
+            .image {
                 margin: 0;
+                font-size: 30px;
+                display: inline-flex;
+                align-items: center;
+            }
+            .label {
+                float: left;
+                text-align: left;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: 10px;
+                font-size: smaller;
             }
         }
+    }
+}
+
+.start-menu.open {
+	position: absolute;
+	bottom: 40px;
+	display: block;
+	animation: openStart .1s ease-out;
+	opacity: 1;
+    z-index: 9999;
+}
+
+@keyframes openStart {
+    0% {
+        position: absolute;
+        bottom: -10%;
+        opacity: 0;
+    }
+    100% {
+        position: absolute;
+        bottom: 40px;
+        opacity: 1;
+    }
+}
+
+@keyframes closeStart {
+    0% {
+        position: absolute;
+        bottom: 40px;
+        opacity: 1;
+    }
+    100% {
+        position: absolute;
+        bottom: -10%;
+        opacity: 0;
+    }
+}
+
+.start-menu.open + .taskbar {
+    border-top-left-radius: 0px;
+    .taskbar-item:first-of-type {
+        border-top-left-radius: 0px;
+        background-image: $acrylic !important;
+        background-blend-mode: luminosity !important;
     }
 }

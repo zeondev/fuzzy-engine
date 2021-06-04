@@ -3,6 +3,18 @@ html,body {
     font-family: 'Segoe UI Semilight';
 }
 
+html {
+    background-image: url(/assets/desktop.jpg) #000 !important;
+}
+
+body[theme=dark] {
+    background-color: map.get($colors, accent, dark, background);
+}
+
+body {
+    background-color: map.get($colors, accent, light, background);
+}
+
 body {
     padding: 0px;
     overflow: hidden;

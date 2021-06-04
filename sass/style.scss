@@ -2,5 +2,8 @@
 Windows project SCSS File
 */
 @use "sass:map";
+@use "sass:math";
+@use "sass:string";
+@use "sass:color";
 @import "variables";
 @import "components/autoload";

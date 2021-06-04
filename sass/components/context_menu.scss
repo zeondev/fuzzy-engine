@@ -1,0 +1,48 @@
+$context-border-radius: 8px;
+body[theme="dark"] {
+    .context-menu {
+        background: rgba(map.get($colors, theme, dark, background), 0.5);
+        color: map.get($colors, theme, dark, foreground);
+        ul {
+            li {
+                color: map.get($colors, theme, dark, foreground);
+            }
+            li:first-child {
+                border-top-left-radius: $context-border-radius;
+                border-top-right-radius: $context-border-radius;
+            }
+            li:last-child {
+                border-bottom-left-radius: $context-border-radius;
+                border-bottom-right-radius: $context-border-radius;
+            }
+            li:hover {
+                background: rgba(map.get($colors, theme, dark, background-alt), 0.5);
+            }
+        }
+    }
+}
+
+.context-menu {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    position: absolute;
+    background: rgba(map.get($colors, theme, light, background), 0.5);
+    backdrop-filter: $blur;
+    color: map.get($colors, theme, light, foreground);
+    border-radius: 5px;
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+            padding: 10px 20px;
+            list-style: none;
+            color: map.get($colors, theme, light, foreground);
+        }
+        li:hover {
+            background: rgba(map.get($colors, theme, light, background), 0.5);
+        }
+    }
+}

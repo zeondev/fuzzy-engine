@@ -1,0 +1,39 @@
+$padding: (
+    "l": left,
+    "r": right,
+    "t": top,
+    "b": bottom,
+);
+
+@each $class, $type in $padding {
+    @for $i from 0 through 5 {
+        .p#{$class}-#{$i} {
+            padding-#{$type}: #{math.div($i, 2)}em;
+        }
+        .m#{$class}-#{$i} {
+            margin-#{$type}: #{math.div($i, 2)}em;
+        }
+        .px-#{$i} {
+            padding-left: #{math.div($i, 2)}em;
+            padding-right: #{math.div($i, 2)}em;
+        }
+        .mx-#{$i} {
+            margin-left: #{math.div($i, 2)}em;
+            margin-right: #{math.div($i, 2)}em;
+        }
+        .py-#{$i} {
+            padding-top: #{math.div($i, 2)}em;
+            padding-bottom: #{math.div($i, 2)}em;
+        }
+        .my-#{$i} {
+            margin-top: #{math.div($i, 2)}em;
+            margin-bottom: #{math.div($i, 2)}em;
+        }
+        .p-#{$i} {
+            padding-#{$type}: #{math.div($i, 2)}em;
+        }
+        .m-#{$i} {
+            margin-#{$type}: #{math.div($i, 2)}em;
+        }
+    }
+}

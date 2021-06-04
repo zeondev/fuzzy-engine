@@ -1,0 +1,54 @@
+$colors: (
+    accent: (
+        blue: (
+            regular: #003e92,
+            light: #0067c0,
+            hover: #19519d,
+            active: #0067c0,
+            pressed: #0c4797,
+            active-border: #a6e1ff,
+            foreground: #fff,
+        ),
+        dark: (
+            regular: #333333,
+            light: #3b3b3b,
+            hover: #424242,
+            active: #3f3f3f,
+            pressed: #414141,
+            active-border: #ffffff,
+            foreground: #fff,
+        ),
+        light: (
+            regular: #ffffff,
+            light: #dfdfdf,
+            hover: #d3d3d3,
+            active: #cfcfcf,
+            pressed: #d4d4d4,
+            active-border: #c2c2c2,
+            foreground: #000000,
+        ),
+    ),
+    theme: (
+        close: #e81123,
+        close-alt: #f1707a,
+        light: (
+            background: #fff,
+            background-alt: darken(#fff, 10),
+            foreground: #000,
+        ),
+        dark: (
+            background: #000,
+            background-alt2: #303030,   
+            background-alt: lighten(#000, 5),
+            foreground: #fff,
+        ),
+    ),
+);
+$acrylic: url("/assets/acrylic.png"),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+$blur: blur(101px);
+$currentTheme: dark;
+/* $currentTheme,  */
+// a
+$padding: 6px;
+$main-font: "Segoe UI";

@@ -1,0 +1,29 @@
+.card {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    color: map.get($colors, accent, dark, foreground);
+    background: map.get($colors, accent, dark, regular);
+    position: relative;
+    .image {
+        margin: 0;
+        font-size: 30px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .label {
+        float: left;
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 10px;
+        font-size: smaller;
+    }
+}
