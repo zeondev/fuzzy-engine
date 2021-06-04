@@ -2,7 +2,7 @@ $tb-border-radius: 7px;
 
 body[theme="dark"] {
     .taskbar {
-        background: /*url("assets/noise.png")*/ rgba(map.get($colors, accent, dark, regular), 0.75);
+        background: /*url("../../assets/noise.png")*/ rgba(map.get($colors, accent, dark, regular), 0.75);
         .taskbar-item {
             color: #fff;
             input {
@@ -36,7 +36,7 @@ body[theme="dark"] {
     border-radius: $tb-border-radius;
     width: calc(100% - 6px);
     height: 40px;
-    background: /*url("assets/noise.png")*/ rgba(map.get($colors, accent, light, regular), 0.5);
+    background: /*url("../../assets/noise.png")*/ rgba(map.get($colors, accent, light, regular), 0.5);
     background-image: $acrylic !important;
     background-blend-mode: luminosity !important;
     backdrop-filter: $blur;
