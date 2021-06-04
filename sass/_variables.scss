@@ -44,7 +44,7 @@ $colors: (
         ),
     ),
 );
-$acrylic: url("/assets/acrylic.png"),
+$acrylic: url("assets/acrylic.png"),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
 $blur: blur(101px);
 $currentTheme: dark;
